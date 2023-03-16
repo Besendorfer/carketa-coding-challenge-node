@@ -35,6 +35,6 @@ I tried to add in a few bonus items, which you might have noticed.
 1. Tests
 2. TypeScript
 3. Hosted server - try out these endpoints!
-    * http://ec2-34-208-5-173.us-west-2.compute.amazonaws.com:3000/api/people (also try out the sortBy query params: name, height, and mass)
+    * http://ec2-34-208-5-173.us-west-2.compute.amazonaws.com:3000/api/people (also try out the sortBy query param options: name, height, and mass)
     * http://ec2-34-208-5-173.us-west-2.compute.amazonaws.com:3000/api/planets
     * This server is not secure by any means. There are a number of things I would do to keep it safe, but I wanted to get this available so you could take a look at it.
