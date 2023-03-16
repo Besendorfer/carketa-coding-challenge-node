@@ -1,14 +1,13 @@
-import type { Person } from './types/people';
-import type { SortByComparator } from './types/utils';
+import type { Person } from '../types/people';
+import type { SortByComparator } from '../types/utils';
 
 // A fun use of currying so we can use this map to store comparator functions.
+// I might want to move this back to the People route, since this is specific for that.
 const sortFunctionMap: Record<string, SortByComparator> = {
   // Just a basic ascending sort on strings
   'name': (sortBy: string) => (a: Person, b: Person) =>
-    (a[sortBy as keyof Person] < b[sortBy as keyof Person])
-      ? -1
-      : ((a[sortBy as keyof Person] > b[sortBy as keyof Person])
-      ? 1
+    (a[sortBy as keyof Person] < b[sortBy as keyof Person]) ? -1
+      : ((a[sortBy as keyof Person] > b[sortBy as keyof Person]) ? 1
       : 0),
   // An ascending sort on parsed integers, and accounts for "unknown"
   'height': (sortBy: string) => (a: Person, b: Person) => {

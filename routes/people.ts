@@ -1,5 +1,6 @@
+import axios from 'axios';
 import express, { Request, Response } from 'express';
-import { sortFunctionMap } from '../utils';
+import { sortFunctionMap } from './people.utils';
 
 import type { Router } from 'express';
 import type { Person } from '../types/people';
@@ -15,8 +16,8 @@ people.get('/', async (req: Request, res: Response) => {
   if (!starWarsPeople.length) {
     // pull all data (pagination)
     while (next) {
-      let peopleResults = await fetch(next);
-      let resultsJson = await peopleResults.json();
+      let peopleResults = await axios(next);
+      let resultsJson = peopleResults.data;
       next = resultsJson.next;
 
       starWarsPeople.push(...resultsJson.results);

@@ -1,4 +1,5 @@
 import express, { Request, Response } from 'express';
+import axios from 'axios';
 
 import type { Router } from 'express';
 import type { Planet } from '../types/planets';
@@ -15,8 +16,8 @@ planets.get('/', async (_req: Request, res: Response) => {
     // pull all data (pagination)
     while (next) {
       try {
-        let planetResults = await fetch(next);
-        let resultsJson = await planetResults.json();
+        let planetResults = await axios(next);
+        let resultsJson = planetResults.data;
         const mappedResults: Planet[] = [];
 
         // Grab each resident's names and replace the URLs with their names
@@ -25,8 +26,8 @@ planets.get('/', async (_req: Request, res: Response) => {
 
           for (let residentUrl of planet.residents) {
             try {
-              let residentResult = await fetch(residentUrl);
-              let residentJson = await residentResult.json();
+              let residentResult = await axios(residentUrl);
+              let residentJson = residentResult.data;
 
               planetResidents.push(residentJson?.name ?? '');
             } catch (residentError) {

@@ -1,0 +1,82 @@
+const peopleList1 = [
+  {
+    name: 'test person2',
+    height: '10',
+    mass: '2,031',
+    hair_color: 'blue',
+    skin_color: 'tan',
+    eye_color: 'blue',
+    birth_year: '2',
+    gender: 'male',
+    homeworld: 'test planet2',
+    films: ['test film2'],
+    species: ['test species2'],
+    vehicles: ['test vehicle2'],
+    starships: ['test starship2'],
+    created: 'test date2',
+    edited: 'test date2',
+    url: 'test url2',
+  },
+  {
+    name: 'test person1',
+    height: 'unknown',
+    mass: '9',
+    hair_color: 'blue',
+    skin_color: 'tan',
+    eye_color: 'blue',
+    birth_year: '1',
+    gender: 'male',
+    homeworld: 'test planet1',
+    films: ['test film1'],
+    species: ['test species1'],
+    vehicles: ['test vehicle1'],
+    starships: ['test starship1'],
+    created: 'test date1',
+    edited: 'test date1',
+    url: 'test url1',
+  },
+  {
+    name: 'test person4',
+    height: '12',
+    mass: 'unknown',
+    hair_color: 'blue',
+    skin_color: 'tan',
+    eye_color: 'blue',
+    birth_year: '1',
+    gender: 'male',
+    homeworld: 'test planet1',
+    films: ['test film1'],
+    species: ['test species1'],
+    vehicles: ['test vehicle1'],
+    starships: ['test starship1'],
+    created: 'test date1',
+    edited: 'test date1',
+    url: 'test url1',
+  }
+];
+
+const peopleList2 = [
+  {
+    name: 'test person3',
+    height: '3',
+    mass: '3',
+    hair_color: 'blue',
+    skin_color: 'tan',
+    eye_color: 'blue',
+    birth_year: '3',
+    gender: 'male',
+    homeworld: 'test planet3',
+    films: ['test film3'],
+    species: ['test species3'],
+    vehicles: ['test vehicle3'],
+    starships: ['test starship3'],
+    created: 'test date3',
+    edited: 'test date3',
+    url: 'test url3',
+  }
+];
+
+export {
+  peopleList1,
+  peopleList2
+};
