@@ -28,13 +28,15 @@ people.get('/', async (req: Request, res: Response) => {
     }
   }
 
+  const results = structuredClone(starWarsPeople);
+
   // sort by 'sortBy' query param
   if (req.query.sortBy) {
     const sortBy: string = req.query.sortBy as string;
-    starWarsPeople.sort(sortFunctionMap[sortBy]?.(sortBy));
+    results.sort(sortFunctionMap[sortBy]?.(sortBy));
   }
 
-  res.send(starWarsPeople);
+  res.send(results);
 });
 
 export {
