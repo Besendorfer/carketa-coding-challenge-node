@@ -18,7 +18,7 @@ npm run dev
 
 ## Running tests
 
-So, I was able to write up some test cases for both the `/people` and `/planets` routes. Strangely, the axios mocking tool I used, `nock`, was giving me some trouble when trying to mock out the "next" parameter for pagination. It wasn't cleaning out the interceptor correctly, even with using their `cleanAll` method. So, I broke out the "pagination" tests into it's own test run.
+So, I was able to write up some test cases for both the `/people` and `/planets` routes. Strangely, the axios mocking tool I used, `nock`, was giving me some trouble when trying to mock out the "next" parameter for pagination. It wasn't cleaning out the interceptor correctly, even with using their `cleanAll` method. So, I broke out the "pagination" tests into it's own test run. With more time, I'm sure I could have figured out the issue.
 
 Simple running these two commands should run through the tests:
 

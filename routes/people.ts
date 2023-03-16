@@ -28,9 +28,12 @@ people.get('/', async (req: Request, res: Response) => {
     }
   }
 
+  // This allows us to keep the original, unsorted, list of people untouched
   const results = structuredClone(starWarsPeople);
 
   // sort by 'sortBy' query param
+  // Currently this doesn't account for the query param's casing, so we need to use `sortBy`,
+  // This is something we could account for in the future
   if (req.query.sortBy) {
     const sortBy: string = req.query.sortBy as string;
     results.sort(sortFunctionMap[sortBy]?.(sortBy));
