@@ -16,18 +16,22 @@ people.get('/', async (req: Request, res: Response) => {
   if (!starWarsPeople.length) {
     // pull all data (pagination)
     while (next) {
-      let peopleResults = await axios(next);
-      let resultsJson = peopleResults.data;
-      next = resultsJson.next;
+      try {
+        let peopleResults = await axios(next);
+        let resultsJson = peopleResults.data;
+        next = resultsJson.next;
 
-      starWarsPeople.push(...resultsJson.results);
+        starWarsPeople.push(...resultsJson.results);
+      } catch (error) {
+        console.log('Could not retrieve the list of people', error);
+      }
     }
   }
 
   // sort by 'sortBy' query param
   if (req.query.sortBy) {
     const sortBy: string = req.query.sortBy as string;
-    starWarsPeople.sort(sortFunctionMap[sortBy](sortBy));
+    starWarsPeople.sort(sortFunctionMap[sortBy]?.(sortBy));
   }
 
   res.send(starWarsPeople);

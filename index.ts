@@ -7,13 +7,13 @@ import { planets } from './routes/planets';
 dotenv.config();
 
 const app: Express = express();
-const port = process.env.PORT;
+const port: number = Number(process.env.PORT) ?? 3000;
 const baseUrl = process.env.BASE_URL;
 
 app.use(`${baseUrl}/people`, people);
 app.use(`${baseUrl}/planets`, planets);
 
-app.listen(port, () => {
+app.listen(port, '0.0.0.0', 128, () => {
   console.log(`[server]: Server is running at http://localhost:${port}`);
 });
 
